@@ -14,7 +14,7 @@ class SimplePageFallbackMiddleware(object):
             return response
 
         # set up the location where this template should reside
-        template = u"{0}/{1}.html".format(SIMPLE_TEMPLATES_DIR, request.path.strip('/') or u'_homepage_')
+        template = u"{0}/{1}".format(SIMPLE_TEMPLATES_DIR, request.path.strip('/') or u'_homepage_')
 
         # if it doesn't exist, continue with the 404 response
         if not find_template(template):
